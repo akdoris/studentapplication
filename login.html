@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - OriShop</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="auth-container">
+        <h1>Login to OriShop</h1>
+        
+        <?php if (isset($_SESSION['login_error'])): ?>
+            <div class="alert error"><?php echo $_SESSION['login_error']; unset($_SESSION['login_error']); ?></div>
+        <?php endif; ?>
+        
+        <?php if (isset($_SESSION['reg_success'])): ?>
+            <div class="alert success"><?php echo $_SESSION['reg_success']; unset($_SESSION['reg_success']); ?></div>
+        <?php endif; ?>
+        
+        <form action="ori_login.php" method="POST">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            
+            <div class="form-group checkbox">
+                <input type="checkbox" id="remember_me" name="remember_me">
+                <label for="remember_me">Remember me</label>
+            </div>
+            
+            <button type="submit" class="btn">Login</button>
+        </form>
+        
+        <div class="auth-footer">
+            Don't have an account? <a href="register.html">Register here</a>
+        </div>
+    </div>
+</body>
+</html>
