@@ -26,4 +26,14 @@ public class StudentController {
     public Student addStudent(@RequestBody Student student) {
         return service.addStudent(student);
     }
-} 
+
+    @PutMapping("/students/{id}")
+    public Student updateStudent(@PathVariable Long id, @RequestBody Student student) {
+        return service.updateStudent(id, student);
+    }
+
+    @DeleteMapping("/students/{id}")
+    public String deleteStudent(@PathVariable Long id) {
+        return service.deleteStudent(id) ? "Deleted successfully" : "Student not found";
+    }
+}

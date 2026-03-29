@@ -1,4 +1,5 @@
 com\example\studentapp\service\StudentService.class
 com\example\studentapp\StudentappApplication.class
+com\example\studentapp\repository\StudentRepository.class
 com\example\studentapp\controller\StudentController.class
 com\example\studentapp\model\Student.class

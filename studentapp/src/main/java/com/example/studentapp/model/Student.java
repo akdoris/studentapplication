@@ -14,8 +14,7 @@ public class Student {
 
     public Student() {}
 
-    public Student(Long id, String name, String course) {
-        this.id = id;
+    public Student(String name, String course) {
         this.name = name;
         this.course = course;
     }
@@ -23,4 +22,7 @@ public class Student {
     public Long getId() { return id; }
     public String getName() { return name; }
     public String getCourse() { return course; }
+
+    public void setName(String name) { this.name = name; }
+    public void setCourse(String course) { this.course = course; }
 }
